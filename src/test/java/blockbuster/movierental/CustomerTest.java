@@ -1,7 +1,10 @@
 package blockbuster.movierental;
 
+import com.google.common.collect.Lists;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -26,11 +29,12 @@ public class CustomerTest {
     @Test
     public void customerWithRegularOneDayRental() {
         customer.addRental(REGULAR_ONE_DAY);
-        String expected = getStatement(2, 1);
+        ArrayList<Rental> rentals = Lists.newArrayList(REGULAR_ONE_DAY);
+        String expected = getStatement(rentals,2, 1);
         assertThat(customer.statement()).isEqualTo(expected);
     }
 
-    private String getStatement(double amount, int renterPoints) {
+    private String getStatement(ArrayList<Rental> rentals, double amount, int renterPoints) {
         return String.format("Rental Record for NAME\n\tMOVIE\t2.0\nYou owed %.1f\nYou earned %d frequent renter points\n", amount, renterPoints);
     }
 
