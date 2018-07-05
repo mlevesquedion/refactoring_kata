@@ -30,14 +30,12 @@ public class CustomerTest {
     public void customerWithRegularOneDayRental() {
         customer.addRental(REGULAR_ONE_DAY);
         ArrayList<Rental> rentals = Lists.newArrayList(REGULAR_ONE_DAY);
-        String expected = getStatement(rentals,2, 1);
+        String expected = getStatement("\tMOVIE\t2.0",2, 1);
         assertThat(customer.statement()).isEqualTo(expected);
     }
 
-    private String getStatement(ArrayList<Rental> rentals, double amount, int renterPoints) {
-        String formattedRentals = "\tMOVIE\t2.0";
+    private String getStatement(String formattedRentals, double amount, int renterPoints) {
         return String.format("Rental Record for NAME\n%s\nYou owed %.1f\nYou earned %d frequent renter points\n", formattedRentals, amount, renterPoints);
     }
-
 
 }
