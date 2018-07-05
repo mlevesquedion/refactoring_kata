@@ -22,19 +22,19 @@ public class CustomerTest {
 
     @Test
     public void givenCustomerWithNoRentals_shouldProduceMinimalStatement() throws Exception {
-        String expected = "Rental Record for NAME\nYou owed 0.0\nYou earned 0 frequent renter points\n";
+        String expected = getStatement("", "0.0", "0");
         assertThat(customer.statement()).isEqualTo(expected);
     }
 
     @Test
     public void customerWithRegularOneDayRental() {
         customer.addRental(REGULAR_ONE_DAY);
-        String expected = getStatement("\tMOVIE\t2.0","2.0", "1");
+        String expected = getStatement("\tMOVIE\t2.0\n","2.0", "1");
         assertThat(customer.statement()).isEqualTo(expected);
     }
 
     private String getStatement(String formattedRentals, String amount, String renterPoints) {
-        return String.format("Rental Record for NAME\n%s\nYou owed %s\nYou earned %s frequent renter points\n", formattedRentals, amount, renterPoints);
+        return String.format("Rental Record for NAME\n%sYou owed %s\nYou earned %s frequent renter points\n", formattedRentals, amount, renterPoints);
     }
 
 }
