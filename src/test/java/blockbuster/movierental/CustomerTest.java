@@ -26,12 +26,12 @@ public class CustomerTest {
     @Test
     public void customerWithRegularOneDayRental() {
         customer.addRental(REGULAR_ONE_DAY);
-        String expected = getStatement();
+        String expected = getStatement(2);
         assertThat(customer.statement()).isEqualTo(expected);
     }
 
-    private String getStatement() {
-        return "Rental Record for NAME\n\tMOVIE\t2.0\nYou owed 2.0\nYou earned 1 frequent renter points\n";
+    private String getStatement(double amount) {
+        return String.format("Rental Record for NAME\n\tMOVIE\t2.0\nYou owed %.1f\nYou earned 1 frequent renter points\n", amount);
     }
 
 
