@@ -35,7 +35,8 @@ public class CustomerTest {
     }
 
     private String getStatement(ArrayList<Rental> rentals, double amount, int renterPoints) {
-        return String.format("Rental Record for NAME\n\tMOVIE\t2.0\nYou owed %.1f\nYou earned %d frequent renter points\n", amount, renterPoints);
+        String formattedRentals = "\tMOVIE\t2.0";
+        return String.format("Rental Record for NAME\n%s\nYou owed %.1f\nYou earned %d frequent renter points\n", formattedRentals, amount, renterPoints);
     }
 
 
