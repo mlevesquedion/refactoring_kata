@@ -29,7 +29,6 @@ public class CustomerTest {
     @Test
     public void customerWithRegularOneDayRental() {
         customer.addRental(REGULAR_ONE_DAY);
-        ArrayList<Rental> rentals = Lists.newArrayList(REGULAR_ONE_DAY);
         String expected = getStatement("\tMOVIE\t2.0","2.0", "1");
         assertThat(customer.statement()).isEqualTo(expected);
     }
