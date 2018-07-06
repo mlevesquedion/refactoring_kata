@@ -56,4 +56,9 @@ public class RentalTest {
     public void fiveDayChildrens_cost() {
         assertThat(FIVE_DAYS_CHILDRENS.cost()).isWithin(1e-12).of(4.5);
     }
+
+    @Test
+    public void getLine() {
+        assertThat(FIVE_DAYS_CHILDRENS.getLine()).isEqualTo("\tCHILDRENS\t4.5\n");
+    }
 }

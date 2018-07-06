@@ -28,4 +28,8 @@ public class Rental {
     public double cost() {
         return movie.price(daysRented);
     }
+
+    public String getLine() {
+        return "\t" + movie.getTitle() + "\t" + String.valueOf(cost()) + "\n";
+    }
 }
