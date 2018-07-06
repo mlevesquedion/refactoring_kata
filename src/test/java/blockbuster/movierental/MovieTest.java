@@ -26,8 +26,8 @@ public class MovieTest {
     }
 
     @Test
-    public void regularMovie_basePrice() {
-        assertThat(REGULAR.basePrice()).isWithin(1e-12).of(2.0);
+    public void regularMovieTwoDays_price() {
+        assertThat(REGULAR.price(2)).isWithin(1e-12).of(2.0);
     }
 
     @Test
