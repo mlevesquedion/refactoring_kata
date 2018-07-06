@@ -29,6 +29,9 @@ public class Rental {
         if (movie.getPriceCode() == Movie.NEW_RELEASE) {
             return 3.0 * daysRented;
         }
+        if (movie.getPriceCode() == Movie.CHILDRENS) {
+            return 1.5;
+        }
         return 2.0 + (daysRented > 2 ? 1.5 : 0);
     }
 }
