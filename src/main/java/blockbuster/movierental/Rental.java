@@ -18,7 +18,7 @@ public class Rental {
     }
 
     public int frequentRenterPoints() {
-        return 1;
+        return 1 + (isEligibleForExtraPoints() ? 1 : 0);
     }
 
     public boolean isEligibleForExtraPoints() {

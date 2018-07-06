@@ -18,6 +18,11 @@ public class RentalTest {
     }
 
     @Test
+    public void givenATwoDayNewRelease_shouldBeWorthTwoPoints() {
+        assertThat(TWO_DAY_NEW.frequentRenterPoints()).isEqualTo(2);
+    }
+
+    @Test
     public void givenATwoDayNewRelease_shouldBeEligibleForExtraPoints() {
         assertThat(TWO_DAY_NEW.isEligibleForExtraPoints()).isTrue();
     }
