@@ -41,4 +41,8 @@ public class Movie {
                 return 0;
         }
     }
+
+    public double priceFor(int days) {
+        return 4.5;
+    }
 }

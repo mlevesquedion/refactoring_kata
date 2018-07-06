@@ -39,4 +39,9 @@ public class MovieTest {
     public void newMovie_basePrice() {
         assertThat(NEW.basePrice()).isWithin(1e-12).of(0.0);
     }
+
+    @Test
+    public void regularMovie_priceForDays() {
+        assertThat(NEW.priceFor(5)).isWithin(1e-12).of(4.5);
+    }
 }
