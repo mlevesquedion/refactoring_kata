@@ -26,7 +26,7 @@ public class Customer {
 
         for (Rental rental : rentals) {
             double thisAmount = calculateCost(rental);
-            frequentRenterPoints = addRenterPoints(frequentRenterPoints, rental);
+            frequentRenterPoints += rental.frequentRenterPoints();
 
             result = addLine(result, rental, thisAmount);
             totalAmount += thisAmount;
@@ -34,14 +34,6 @@ public class Customer {
         result = addFooter(totalAmount, frequentRenterPoints, result);
 
         return result;
-    }
-
-    private int addRenterPoints(int frequentRenterPoints, Rental rental) {
-        frequentRenterPoints++;
-        if (rental.isEligibleForExtraPoints()) {
-            frequentRenterPoints++;
-        }
-        return frequentRenterPoints;
     }
 
     private double calculateCost(Rental rental) {

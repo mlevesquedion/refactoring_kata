@@ -21,7 +21,7 @@ public class Rental {
         return 1 + (isEligibleForExtraPoints() ? 1 : 0);
     }
 
-    public boolean isEligibleForExtraPoints() {
+    private boolean isEligibleForExtraPoints() {
         return movie.getPriceCode() == Movie.NEW_RELEASE && getDaysRented() > 1;
     }
 }
