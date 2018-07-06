@@ -11,10 +11,10 @@ public class CustomerTest {
     private static final Movie REGULAR_MOVIE = new RegularMovie("MOVIE");
     private static final Rental REGULAR_ONE_DAY = new Rental(REGULAR_MOVIE, 1);
     private static final Rental REGULAR_THREE_DAYS = new Rental(REGULAR_MOVIE, 3);
-    private static final Movie NEW_RELEASE_MOVIE = new Movie("NEW", Movie.NEW_RELEASE);
+    private static final Movie NEW_RELEASE_MOVIE = new NewMovie("NEW");
     private static final Rental NEW_RELEASE_ONE_DAY = new Rental(NEW_RELEASE_MOVIE, 1);
     private static final Rental NEW_RELEASE_TWO_DAYS = new Rental(NEW_RELEASE_MOVIE, 2);
-    private static final Movie CHILDRENS_MOVIE = new Movie("CHILDRENS", Movie.CHILDRENS);
+    private static final Movie CHILDRENS_MOVIE = new ChildrensMovie("CHILDRENS");
     private static final Rental CHILDRENS_ONE_DAY = new Rental(CHILDRENS_MOVIE, 1);
     private static final Rental CHILDRENS_FOUR_DAYS = new Rental(CHILDRENS_MOVIE, 4);
     private Customer customer;
