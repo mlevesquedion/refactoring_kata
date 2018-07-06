@@ -11,10 +11,10 @@ public class RentalTest {
     private static final Rental ONE_DAY_REGULAR = new Rental(REGULAR, 1);
     private static final Movie NEW = new Movie("NEW", Movie.NEW_RELEASE);
     private static final Rental TWO_DAY_NEW = new Rental(NEW, 2);
-    private static final Rental THREE_DAY_REGULAR = new Rental(REGULAR, 3);
+    private static final Rental THREE_DAYS_REGULAR = new Rental(REGULAR, 3);
 
     @Test
-    public void givenAOneDayRegularMovieRental_shouldBeWorthOnePoint() {
+    public void givenAOneDayRegularMovie_shouldBeWorthOnePoint() {
         assertThat(ONE_DAY_REGULAR.frequentRenterPoints()).isEqualTo(1);
     }
 
@@ -24,12 +24,13 @@ public class RentalTest {
     }
 
     @Test
-    public void givenAOneDayRegularMovieRental_shouldCostTwoDollars() {
+    public void oneDayRegularMovie_cost() {
         assertThat(ONE_DAY_REGULAR.cost()).isWithin(1e-12).of(2.0);
     }
 
     @Test
-    public void givenAThreeDayRegularMovieRental_shouldCostThreeAndAHalfDollars() {
-        assertThat(THREE_DAY_REGULAR.cost()).isWithin(1e-12).of(3.5);
+    public void threeDaysRegularMovie_cost() {
+        assertThat(THREE_DAYS_REGULAR.cost()).isWithin(1e-12).of(3.5);
     }
+
 }
