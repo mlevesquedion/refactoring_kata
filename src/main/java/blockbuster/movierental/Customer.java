@@ -15,6 +15,10 @@ public class Customer {
         this.rentals.add(rental);
     }
 
+    public List<Rental> getRentals() {
+        return rentals;
+    }
+
     public String getName() {
         return this.name;
     }
