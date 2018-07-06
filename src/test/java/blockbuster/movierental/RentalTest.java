@@ -16,6 +16,7 @@ public class RentalTest {
     private static final Movie CHILDRENS = new Movie("CHILDRENS", Movie.CHILDRENS);
     private static final Rental ONE_DAY_CHILDRENS = new Rental(CHILDRENS, 1);
     private static final Rental FOUR_DAYS_REGULAR = new Rental(REGULAR, 4);
+    private static final Rental FIVE_DAYS_CHILDRENS = new Rental(CHILDRENS, 5);
 
     @Test
     public void givenAOneDayRegularMovie_shouldBeWorthOnePoint() {
@@ -50,5 +51,10 @@ public class RentalTest {
     @Test
     public void oneDayChildrens_cost() {
         assertThat(ONE_DAY_CHILDRENS.cost()).isWithin(1e-12).of(1.5);
+    }
+
+    @Test
+    public void fiveDayChildrens_cost() {
+        assertThat(FIVE_DAYS_CHILDRENS.cost()).isWithin(1e-12).of(4.5);
     }
 }
