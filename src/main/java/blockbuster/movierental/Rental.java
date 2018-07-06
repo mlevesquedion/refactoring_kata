@@ -16,4 +16,8 @@ public class Rental {
     public Movie getMovie() {
         return this.movie;
     }
+
+    public int frequentRenterPoints() {
+        return 1;
+    }
 }
