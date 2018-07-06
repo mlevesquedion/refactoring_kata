@@ -31,42 +31,27 @@ public class MovieTest {
     }
 
     @Test
-    public void childrensMovie_basePrice() {
-        assertThat(CHILDRENS.basePrice()).isWithin(1e-12).of(1.5);
+    public void childrensMovieThreeDays_price() {
+        assertThat(CHILDRENS.price(3)).isWithin(1e-12).of(1.5);
     }
 
     @Test
-    public void newMovie_basePrice() {
-        assertThat(NEW.basePrice()).isWithin(1e-12).of(0.0);
+    public void newMovieOneDay_price() {
+        assertThat(NEW.price(1)).isWithin(1e-12).of(3.0);
     }
 
     @Test
-    public void regularMovie_priceForTwoDays() {
-        assertThat(REGULAR.priceFor(2)).isWithin(1e-12).of(0.0);
+    public void regularMovieFiveDays_price() {
+        assertThat(REGULAR.price(5)).isWithin(1e-12).of(6.5);
     }
 
     @Test
-    public void regularMovie_priceForFiveDays() {
-        assertThat(REGULAR.priceFor(5)).isWithin(1e-12).of(4.5);
+    public void newMovieTwoDays_price() {
+        assertThat(NEW.price(2)).isWithin(1e-12).of(6.0);
     }
 
     @Test
-    public void newMovie_priceForOneDay() {
-        assertThat(NEW.priceFor(1)).isWithin(1e-12).of(3.0);
-    }
-
-    @Test
-    public void newMovie_priceForTwoDays() {
-        assertThat(NEW.priceFor(2)).isWithin(1e-12).of(6.0);
-    }
-
-    @Test
-    public void childrensMovie_priceForThreeDays() {
-        assertThat(CHILDRENS.priceFor(3)).isWithin(1e-12).of(0.0);
-    }
-
-    @Test
-    public void childrensMovie_priceForSixDays() {
-        assertThat(CHILDRENS.priceFor(6)).isWithin(1e-12).of(4.5);
+    public void childrensMovieSixDays_price() {
+        assertThat(CHILDRENS.price(6)).isWithin(1e-12).of(6.0);
     }
 }
