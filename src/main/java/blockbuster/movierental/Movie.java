@@ -43,6 +43,15 @@ public class Movie {
     }
 
     public double priceFor(int daysRented) {
-        return daysRented > 2 ? (daysRented - 2) * 1.5 : 0.0;
+        switch (priceCode) {
+            case REGULAR:
+                return daysRented > 2 ? (daysRented - 2) * 1.5 : 0.0;
+            case NEW_RELEASE:
+                return daysRented * 3.0;
+            case CHILDRENS:
+                return daysRented > 3 ? (daysRented - 3) * 1.5 : 0.0;
+            default:
+                return 0.0;
+        }
     }
 }
