@@ -1,10 +1,7 @@
 package blockbuster.movierental;
 
-import com.google.common.collect.Lists;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.ArrayList;
 
 import static com.google.common.truth.Truth.assertThat;
 
