@@ -42,7 +42,7 @@ public class Movie {
         }
     }
 
-    public double priceFor(int days) {
-        return 4.5;
+    public double priceFor(int daysRented) {
+        return daysRented > 2 ? (daysRented - 2) * 1.5 : 0.0;
     }
 }
