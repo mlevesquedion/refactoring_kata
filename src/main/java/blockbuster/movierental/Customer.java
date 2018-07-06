@@ -38,10 +38,14 @@ public class Customer {
 
     private int addRenterPoints(int frequentRenterPoints, Rental rental) {
         frequentRenterPoints++;
-        if (rental.getMovie().getPriceCode() == Movie.NEW_RELEASE && rental.getDaysRented() > 1) {
+        if (isEligibleForExtraPoints(rental)) {
             frequentRenterPoints++;
         }
         return frequentRenterPoints;
+    }
+
+    private boolean isEligibleForExtraPoints(Rental rental) {
+        return rental.getMovie().getPriceCode() == Movie.NEW_RELEASE && rental.getDaysRented() > 1;
     }
 
     private double calculateCost(Rental rental) {
