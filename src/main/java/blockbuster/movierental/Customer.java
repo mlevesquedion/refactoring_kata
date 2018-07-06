@@ -59,9 +59,14 @@ public class Customer {
 
         }
         //add footer lines
+        result = addFooter(totalAmount, frequentRenterPoints, result);
+
+        return result;
+    }
+
+    private String addFooter(double totalAmount, int frequentRenterPoints, String result) {
         result = addOwedAmount(totalAmount, result);
         result = addRenterPoints(frequentRenterPoints, result);
-
         return result;
     }
 
