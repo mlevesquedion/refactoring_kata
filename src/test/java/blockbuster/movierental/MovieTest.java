@@ -11,17 +11,17 @@ public class MovieTest {
     private static final Movie NEW = new Movie("NEW", Movie.NEW_RELEASE);
 
     @Test
-    public void regularMovie_points() {
+    public void givenRegularMovie_shouldNotBeEligibleForExtraPoints() {
         assertThat(REGULAR.eligibleForExtraPoints()).isFalse();
     }
 
     @Test
-    public void childrensMovie_points() {
+    public void givenChildrensMovie_shouldNotBeEligibleForExtraPoints() {
         assertThat(CHILDRENS.eligibleForExtraPoints()).isFalse();
     }
 
     @Test
-    public void newMovie_points() {
+    public void givenNewMovie_shouldBeEligibleForExtraPoints() {
         assertThat(NEW.eligibleForExtraPoints()).isTrue();
     }
 }
