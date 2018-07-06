@@ -8,7 +8,7 @@ import static com.google.common.truth.Truth.assertThat;
 public class CustomerTest {
 
     private static final String NAME = "NAME";
-    private static final Movie REGULAR_MOVIE = new Movie("MOVIE", Movie.REGULAR);
+    private static final Movie REGULAR_MOVIE = new RegularMovie("MOVIE");
     private static final Rental REGULAR_ONE_DAY = new Rental(REGULAR_MOVIE, 1);
     private static final Rental REGULAR_THREE_DAYS = new Rental(REGULAR_MOVIE, 3);
     private static final Movie NEW_RELEASE_MOVIE = new Movie("NEW", Movie.NEW_RELEASE);

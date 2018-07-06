@@ -7,7 +7,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 public class RentalTest {
 
-    private static final Movie REGULAR = new Movie("MOVIE", Movie.REGULAR);
+    private static final Movie REGULAR = new RegularMovie("MOVIE");
     private static final Rental ONE_DAY_REGULAR = new Rental(REGULAR, 1);
     private static final Rental FOUR_DAYS_REGULAR = new Rental(REGULAR, 4);
     private static final Movie NEW = new Movie("NEW", Movie.NEW_RELEASE);
