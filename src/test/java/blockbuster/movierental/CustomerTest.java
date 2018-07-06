@@ -14,6 +14,8 @@ public class CustomerTest {
     private static final Movie NEW_RELEASE_MOVIE = new Movie("NEW", Movie.NEW_RELEASE);
     private static final Rental NEW_RELEASE_ONE_DAY = new Rental(NEW_RELEASE_MOVIE, 1);
     private static final Rental NEW_RELEASE_TWO_DAYS = new Rental(NEW_RELEASE_MOVIE, 2);
+    private static final Movie CHILDRENS_MOVIE = new Movie("CHILDRENS", Movie.CHILDRENS);
+    private static final Rental CHILDRENS_ONE_DAY = new Rental(CHILDRENS_MOVIE, 1);
     private Customer customer;
 
     @Before
@@ -52,6 +54,13 @@ public class CustomerTest {
     public void customerWithNewReleaseTwoDaysRental() {
         customer.addRental(NEW_RELEASE_TWO_DAYS);
         String expected = getStatement("\tNEW\t6.0\n", "6.0", "2");
+        assertThat(customer.statement()).isEqualTo(expected);
+    }
+
+    @Test
+    public void customerWithChildrensOneDayRental() {
+        customer.addRental(CHILDRENS_ONE_DAY);
+        String expected = getStatement("\tCHILDRENS\t1.5\n", "1.5", "1");
         assertThat(customer.statement()).isEqualTo(expected);
     }
 
