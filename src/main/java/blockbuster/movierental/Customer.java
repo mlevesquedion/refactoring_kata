@@ -60,8 +60,13 @@ public class Customer {
         }
         //add footer lines
         result = addOwedAmount(totalAmount, result);
-        result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points\n";
+        result = addRenterPoints(frequentRenterPoints, result);
 
+        return result;
+    }
+
+    private String addRenterPoints(int frequentRenterPoints, String result) {
+        result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points\n";
         return result;
     }
 
