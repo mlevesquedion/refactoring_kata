@@ -1,6 +1,6 @@
 package blockbuster.movierental;
 
-public class Movie {
+public abstract class Movie {
     public static final int REGULAR = 0;
     public static final int NEW_RELEASE = 1;
     public static final int CHILDRENS = 2;
@@ -17,37 +17,7 @@ public class Movie {
         return this.title;
     }
 
-    public boolean eligibleForExtraPoints() {
-        return priceCode == Movie.NEW_RELEASE;
-    }
+    public abstract boolean eligibleForExtraPoints();
 
-    private double basePrice() {
-        switch(priceCode) {
-            case REGULAR:
-                return 2.0;
-            case CHILDRENS:
-                return 1.5;
-            case NEW_RELEASE:
-                // fall-through
-            default:
-                return 0;
-        }
-    }
-
-    private double priceFor(int daysRented) {
-        switch (priceCode) {
-            case REGULAR:
-                return daysRented > 2 ? (daysRented - 2) * 1.5 : 0.0;
-            case NEW_RELEASE:
-                return daysRented * 3.0;
-            case CHILDRENS:
-                return daysRented > 3 ? (daysRented - 3) * 1.5 : 0.0;
-            default:
-                return 0.0;
-        }
-    }
-
-    public double price(int daysRented) {
-        return basePrice() + priceFor(daysRented);
-    }
+    public abstract double price(int daysRented);
 }
