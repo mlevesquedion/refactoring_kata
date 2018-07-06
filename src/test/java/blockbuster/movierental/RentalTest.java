@@ -21,4 +21,9 @@ public class RentalTest {
     public void givenATwoDayNewRelease_shouldBeWorthTwoPoints() {
         assertThat(TWO_DAY_NEW.frequentRenterPoints()).isEqualTo(2);
     }
+
+    @Test
+    public void givenAOneDayRegularMovieRental_shouldCostTwoDollars() {
+        assertThat(ONE_DAY_REGULAR.cost()).isWithin(1e-12).of(2.0);
+    }
 }
