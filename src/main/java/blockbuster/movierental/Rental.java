@@ -26,16 +26,6 @@ public class Rental {
     }
 
     public double cost() {
-        double cost = movie.basePrice();
-        if (movie.getPriceCode() == Movie.NEW_RELEASE) {
-            cost += 3.0 * daysRented;
-        }
-        if (movie.getPriceCode() == Movie.CHILDRENS) {
-            cost += daysRented > 3 ? (daysRented - 3) * 1.5 : 0;
-        }
-        if (movie.getPriceCode() == Movie.REGULAR) {
-            cost += daysRented > 2 ? (daysRented - 2) * 1.5 : 0;
-        }
-        return cost;
+        return movie.basePrice() + movie.priceFor(daysRented);
     }
 }
