@@ -26,6 +26,6 @@ public class Rental {
     }
 
     public double cost() {
-        return movie.basePrice() + movie.priceFor(daysRented);
+        return movie.price(daysRented);
     }
 }
