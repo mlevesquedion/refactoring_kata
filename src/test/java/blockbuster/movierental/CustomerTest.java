@@ -72,6 +72,15 @@ public class CustomerTest {
         assertThat(customer.statement()).isEqualTo(expected);
     }
 
+    @Test
+    public void customerWithManyRentals() {
+        customer.addRental(REGULAR_THREE_DAYS);
+        customer.addRental(NEW_RELEASE_ONE_DAY);
+        customer.addRental(NEW_RELEASE_TWO_DAYS);
+        String expected = getStatement("\tMOVIE\t3.5\n\tNEW\t3.0\n\tNEW\t6.0\n", "12.5", "4");
+        assertThat(customer.statement()).isEqualTo(expected);
+    }
+
     private String getStatement(String formattedRentals, String amount, String renterPoints) {
         return String.format("Rental Record for NAME\n%sYou owed %s\nYou earned %s frequent renter points\n", formattedRentals, amount, renterPoints);
     }
