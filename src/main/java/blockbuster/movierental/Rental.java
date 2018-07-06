@@ -20,4 +20,8 @@ public class Rental {
     public int frequentRenterPoints() {
         return 1;
     }
+
+    public boolean isEligibleForExtraPoints() {
+        return movie.getPriceCode() == Movie.NEW_RELEASE && getDaysRented() > 1;
+    }
 }
