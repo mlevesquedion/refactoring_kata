@@ -11,7 +11,7 @@ public class RegularMovie extends Movie {
     }
 
     @Override
-    public double price(int daysRented) {
+    public double priceFor(int daysRented) {
         return 2.0 + (daysRented > 2 ? (daysRented - 2) * 1.5 : 0.0);
     }
 }

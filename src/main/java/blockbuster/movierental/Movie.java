@@ -13,5 +13,5 @@ public abstract class Movie {
 
     public abstract boolean eligibleForExtraPoints();
 
-    public abstract double price(int daysRented);
+    public abstract double priceFor(int daysRented);
 }

@@ -26,7 +26,7 @@ public class Rental {
     }
 
     public double cost() {
-        return movie.price(daysRented);
+        return movie.priceFor(daysRented);
     }
 
     public String getLine() {
