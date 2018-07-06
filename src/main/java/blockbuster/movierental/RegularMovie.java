@@ -7,6 +7,11 @@ public class RegularMovie extends Movie {
     }
 
     @Override
+    public boolean eligibleForExtraPoints() {
+        return false;
+    }
+
+    @Override
     public double price(int daysRented) {
         return 2.0 + (daysRented > 2 ? (daysRented - 2) * 1.5 : 0.0);
     }
