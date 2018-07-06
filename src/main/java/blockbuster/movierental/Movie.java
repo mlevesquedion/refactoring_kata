@@ -25,4 +25,8 @@ public class Movie {
         return this.title;
     }
 
+    public int points() {
+        return 0;
+    }
+
 }
