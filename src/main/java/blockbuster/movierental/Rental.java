@@ -26,6 +26,9 @@ public class Rental {
     }
 
     public double cost() {
+        if (movie.getPriceCode() == Movie.NEW_RELEASE) {
+            return 3.0;
+        }
         return 2.0 + (daysRented > 2 ? 1.5 : 0);
     }
 }
