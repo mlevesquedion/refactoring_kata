@@ -21,7 +21,7 @@ public class CustomerTest {
     }
 
     @Test
-    public void givenCustomerWithNoRentals_shouldProduceMinimalStatement() throws Exception {
+    public void customerWithNoRentals() throws Exception {
         String expected = getStatement("", "0.0", "0");
         assertThat(customer.statement()).isEqualTo(expected);
     }
