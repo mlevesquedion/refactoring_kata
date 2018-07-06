@@ -33,11 +33,6 @@ public class RentalTest {
     }
 
     @Test
-    public void threeDaysRegularMovie_cost() {
-        assertThat(THREE_DAYS_REGULAR.cost()).isWithin(1e-12).of(3.5);
-    }
-
-    @Test
     public void fourDaysRegularMovie_cost() {
         assertThat(FOUR_DAYS_REGULAR.cost()).isWithin(1e-12).of(5.0);
     }
