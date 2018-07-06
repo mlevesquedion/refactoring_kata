@@ -20,16 +20,13 @@ public class Customer {
     }
 
     public String statement() {
-        double totalAmount = 0;
+        double totalAmount = rentals.stream().map(Rental::cost).reduce(0.0, Double::sum);
         int frequentRenterPoints = 0;
         String result = "Rental Record for " + getName() + "\n";
 
         for (Rental rental : rentals) {
-            double thisAmount = rental.cost();
             frequentRenterPoints += rental.frequentRenterPoints();
-
             result += rental.getLine();
-            totalAmount += thisAmount;
         }
         result = addFooter(totalAmount, frequentRenterPoints, result);
 
