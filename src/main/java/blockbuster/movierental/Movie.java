@@ -46,4 +46,8 @@ public class Movie {
                 return 0.0;
         }
     }
+
+    public double price(int daysRented) {
+        return basePrice() + priceFor(daysRented);
+    }
 }
