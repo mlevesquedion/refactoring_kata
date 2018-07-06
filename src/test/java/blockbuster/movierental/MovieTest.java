@@ -7,7 +7,7 @@ import static com.google.common.truth.Truth.assertThat;
 public class MovieTest {
 
     private static final Movie REGULAR = new RegularMovie("REGULAR");
-    private static final Movie CHILDRENS = new Movie("CHILDRENS", Movie.CHILDRENS);
+    private static final Movie CHILDRENS = new ChildrensMovie("CHILDRENS");
     private static final Movie NEW = new Movie("NEW", Movie.NEW_RELEASE);
 
     @Test
