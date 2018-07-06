@@ -22,7 +22,7 @@ public class Rental {
     }
 
     private boolean isEligibleForExtraPoints() {
-        return movie.getPriceCode() == Movie.NEW_RELEASE && getDaysRented() > 1;
+        return movie.eligibleForExtraPoints() && getDaysRented() > 1;
     }
 
     public double cost() {

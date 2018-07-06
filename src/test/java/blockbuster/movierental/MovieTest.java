@@ -12,16 +12,16 @@ public class MovieTest {
 
     @Test
     public void regularMovie_points() {
-        assertThat(REGULAR.points()).isEqualTo(0);
+        assertThat(REGULAR.eligibleForExtraPoints()).isFalse();
     }
 
     @Test
     public void childrensMovie_points() {
-        assertThat(CHILDRENS.points()).isEqualTo(0);
+        assertThat(CHILDRENS.eligibleForExtraPoints()).isFalse();
     }
 
     @Test
     public void newMovie_points() {
-        assertThat(NEW.points()).isEqualTo(1);
+        assertThat(NEW.eligibleForExtraPoints()).isTrue();
     }
 }

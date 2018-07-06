@@ -25,8 +25,8 @@ public class Movie {
         return this.title;
     }
 
-    public int points() {
-        return priceCode == Movie.NEW_RELEASE ? 1 : 0;
+    public boolean eligibleForExtraPoints() {
+        return priceCode == Movie.NEW_RELEASE;
     }
 
 }
