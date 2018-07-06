@@ -8,7 +8,7 @@ public class MovieTest {
 
     private static final Movie REGULAR = new RegularMovie("REGULAR");
     private static final Movie CHILDRENS = new ChildrensMovie("CHILDRENS");
-    private static final Movie NEW = new Movie("NEW", Movie.NEW_RELEASE);
+    private static final Movie NEW = new NewMovie("NEW");
 
     @Test
     public void givenRegularMovie_shouldNotBeEligibleForExtraPoints() {
