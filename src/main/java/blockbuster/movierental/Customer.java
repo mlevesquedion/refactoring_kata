@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Customer {
     private String name;
-    private List<Rental> rentals = new ArrayList();
+    private RentalHistory rentals = new RentalHistory();
 
     public Customer(String name) {
         this.name = name;
@@ -15,7 +15,7 @@ public class Customer {
         this.rentals.add(rental);
     }
 
-    public List<Rental> getRentals() {
+    public RentalHistory getRentals() {
         return rentals;
     }
 

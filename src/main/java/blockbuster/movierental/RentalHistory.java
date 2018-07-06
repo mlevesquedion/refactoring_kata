@@ -15,7 +15,7 @@ public class RentalHistory {
         this.rentals = rentals;
     }
 
-    public void addRental(Rental rental) {
+    public void add(Rental rental) {
         rentals.add(rental);
     }
 

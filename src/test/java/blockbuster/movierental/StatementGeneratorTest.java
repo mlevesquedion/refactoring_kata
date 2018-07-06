@@ -28,7 +28,8 @@ public class StatementGeneratorTest {
         List<Rental> rentals = Lists.newArrayList(
                 RentalFixtures.of("STAR-WARS", MovieType.REGULAR, 2),
                 RentalFixtures.of("CHICKEN LITTLE", MovieType.CHILDRENS, 5));
-        willReturn(rentals).given(customer).getRentals();
+        RentalHistory rentalHistory = new RentalHistory(rentals);
+        willReturn(rentalHistory).given(customer).getRentals();
         willReturn("MIKE").given(customer).getName();
     }
 
