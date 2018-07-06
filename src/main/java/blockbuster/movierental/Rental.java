@@ -26,6 +26,6 @@ public class Rental {
     }
 
     public double cost() {
-        return 2.0;
+        return 2.0 + (daysRented > 2 ? 1.5 : 0);
     }
 }
