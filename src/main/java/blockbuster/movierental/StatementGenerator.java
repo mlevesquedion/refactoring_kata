@@ -1,7 +1,5 @@
 package blockbuster.movierental;
 
-import java.util.List;
-
 public class StatementGenerator {
 
     private String statement = "";
