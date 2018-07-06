@@ -20,12 +20,12 @@ public class CustomerTest {
     private Customer customer;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         customer = new Customer(NAME);
     }
 
     @Test
-    public void customerWithNoRentals() throws Exception {
+    public void customerWithNoRentals() {
         String expected = getStatement("", "0.0", "0");
         assertThat(customer.statement()).isEqualTo(expected);
     }
