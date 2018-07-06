@@ -38,4 +38,9 @@ public class RentalTest {
     public void oneDayNewRelease_cost() {
         assertThat(ONE_DAY_NEW.cost()).isWithin(1e-12).of(3.0);
     }
+
+    @Test
+    public void twoDaysNewRelease_cost() {
+        assertThat(TWO_DAY_NEW.cost()).isWithin(1e-12).of(6.0);
+    }
 }
