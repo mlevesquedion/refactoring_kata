@@ -39,7 +39,6 @@ public class Customer {
             totalAmount += thisAmount;
 
         }
-        //add footer lines
         result = addFooter(totalAmount, frequentRenterPoints, result);
 
         return result;
