@@ -28,12 +28,8 @@ public class Customer {
             double thisAmount = calculateCost(rental);
             frequentRenterPoints = addRenterPoints(frequentRenterPoints, rental);
 
-
-            //show figures for this rental
-            result += "\t" + rental.getMovie().getTitle() + "\t"
-                    + String.valueOf(thisAmount) + "\n";
+            result = addLine(result, rental, thisAmount);
             totalAmount += thisAmount;
-
         }
         result = addFooter(totalAmount, frequentRenterPoints, result);
 
@@ -66,6 +62,12 @@ public class Customer {
                 break;
         }
         return amount;
+    }
+
+    private String addLine(String result, Rental rental, double thisAmount) {
+        result += "\t" + rental.getMovie().getTitle() + "\t"
+                + String.valueOf(thisAmount) + "\n";
+        return result;
     }
 
     private String addFooter(double totalAmount, int frequentRenterPoints, String result) {
