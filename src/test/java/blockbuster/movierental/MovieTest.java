@@ -24,4 +24,9 @@ public class MovieTest {
     public void givenNewMovie_shouldBeEligibleForExtraPoints() {
         assertThat(NEW.eligibleForExtraPoints()).isTrue();
     }
+
+    @Test
+    public void regularMovie_basePrice() {
+        assertThat(REGULAR.basePrice()).isWithin(1e-12).of(2.0);
+    }
 }

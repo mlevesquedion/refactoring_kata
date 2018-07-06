@@ -29,4 +29,7 @@ public class Movie {
         return priceCode == Movie.NEW_RELEASE;
     }
 
+    public double basePrice() {
+        return 2.0;
+    }
 }
