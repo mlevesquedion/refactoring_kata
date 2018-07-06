@@ -30,6 +30,15 @@ public class Movie {
     }
 
     public double basePrice() {
-        return 2.0;
+        switch(priceCode) {
+            case REGULAR:
+                return 2.0;
+            case CHILDRENS:
+                return 1.5;
+            case NEW_RELEASE:
+                // fall-through
+            default:
+                return 0;
+        }
     }
 }

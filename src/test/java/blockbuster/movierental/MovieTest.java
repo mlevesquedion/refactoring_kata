@@ -29,4 +29,14 @@ public class MovieTest {
     public void regularMovie_basePrice() {
         assertThat(REGULAR.basePrice()).isWithin(1e-12).of(2.0);
     }
+
+    @Test
+    public void childrensMovie_basePrice() {
+        assertThat(CHILDRENS.basePrice()).isWithin(1e-12).of(1.5);
+    }
+
+    @Test
+    public void newMovie_basePrice() {
+        assertThat(NEW.basePrice()).isWithin(1e-12).of(0.0);
+    }
 }
