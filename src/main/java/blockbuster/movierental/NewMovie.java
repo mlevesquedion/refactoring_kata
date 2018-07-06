@@ -2,7 +2,7 @@ package blockbuster.movierental;
 
 public class NewMovie extends Movie {
     public NewMovie(String title) {
-        super(title, Movie.NEW_RELEASE);
+        super(title);
     }
 
     @Override
