@@ -21,7 +21,7 @@ public class Movie {
         return priceCode == Movie.NEW_RELEASE;
     }
 
-    public double basePrice() {
+    private double basePrice() {
         switch(priceCode) {
             case REGULAR:
                 return 2.0;
@@ -34,7 +34,7 @@ public class Movie {
         }
     }
 
-    public double priceFor(int daysRented) {
+    private double priceFor(int daysRented) {
         switch (priceCode) {
             case REGULAR:
                 return daysRented > 2 ? (daysRented - 2) * 1.5 : 0.0;
