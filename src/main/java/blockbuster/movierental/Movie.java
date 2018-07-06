@@ -26,7 +26,7 @@ public class Movie {
     }
 
     public int points() {
-        return 0;
+        return priceCode == Movie.NEW_RELEASE ? 1 : 0;
     }
 
 }
